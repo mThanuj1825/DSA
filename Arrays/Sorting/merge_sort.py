@@ -49,5 +49,5 @@ def sort(arr: list[int]) -> list[int]:
 
 if __name__ == "__main__":
     from random import randint
-    arr = [randint(0, 10000) for _ in range(100)]
+    arr = [randint(0, 10000) for _ in range(1000)]
     print(sort(arr.copy()))
