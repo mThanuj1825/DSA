@@ -31,18 +31,23 @@ def sort(arr: list[int]) -> list[int]:
             r += 1
 
     def perform_sort(left: int, right: int) -> None:
+        import insertion_sort
         if left < right:
-            mid = (left + right) // 2
+            if right - left + 1 < 32:
+                insertion_sort.sort(arr)
+            else:
+                mid = (left + right) // 2
 
-            perform_sort(left, mid)
-            perform_sort(mid + 1, right)
+                perform_sort(left, mid)
+                perform_sort(mid + 1, right)
 
-            merge(left, mid, right)
+                merge(left, mid, right)
 
     perform_sort(0, len(arr) - 1)
     return arr
 
 
 if __name__ == "__main__":
-    arr = [5, 2, 3, 1, 4]
+    from random import randint
+    arr = [randint(0, 10000) for _ in range(100)]
     print(sort(arr.copy()))
