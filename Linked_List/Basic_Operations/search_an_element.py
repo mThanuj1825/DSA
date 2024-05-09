@@ -1,8 +1,8 @@
 from Linked_List.Types import singly_linked_list
 
 
-def solve(head: singly_linked_list.Node, target: int) -> int:
-    temp = head
+def search(ll: singly_linked_list.LinkedList, target: int) -> int:
+    temp = ll.head
     idx = 0
     while temp and temp.data != target:
         idx += 1
@@ -19,4 +19,4 @@ if __name__ == '__main__':
     for i in arr:
         ll.add_back(i)
 
-    print(solve(ll.head, target))
+    print(search(ll, target))
