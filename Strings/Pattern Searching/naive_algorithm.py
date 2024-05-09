@@ -13,7 +13,7 @@ def solve(string: str, pattern: str) -> list[int]:
 
 
 if __name__ == "__main__":
-    string = "AABAACAADAABAABA"
-    pattern = "AABA"
+    string = "ABABDABACDABABCABAB"
+    pattern = "ABABCABAB"
 
     print(solve(string, pattern))
