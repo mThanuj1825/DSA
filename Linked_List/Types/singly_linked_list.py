@@ -102,19 +102,20 @@ class LinkedList:
         print("None")
 
 
-l = LinkedList()
-l.add_front(10)
-l.add_back(20)
-l.add_back(30)
-l.add_back(40)
-l.add_back(50)
-l.print()
+if __name__ == '__main__':
+    l = LinkedList()
+    l.add_front(10)
+    l.add_back(20)
+    l.add_back(30)
+    l.add_back(40)
+    l.add_back(50)
+    l.print()
 
-l.delete(0)
-l.print()
+    l.delete(0)
+    l.print()
 
-l.delete(3)
-l.print()
+    l.delete(3)
+    l.print()
 
-l.delete(1)
-l.print()
+    l.delete(1)
+    l.print()
