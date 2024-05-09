@@ -4,14 +4,12 @@ def solve(string: str, pattern: str) -> list[int]:
     def construct_z_array() -> list[int]:
         new_string = pattern + '$' + string
         z_array = [0]
-        iterations = 0
 
         left, right = 0, 1
         while right < len(new_string):
             length = 0
             cur = right
             while right < len(new_string) and new_string[left] == new_string[right]:
-                iterations += 1
                 right += 1
                 left += 1
                 length += 1
@@ -19,8 +17,6 @@ def solve(string: str, pattern: str) -> list[int]:
             right = cur + 1
             left = 0
             z_array.append(length)
-
-        print(iterations)
 
         return z_array
 
