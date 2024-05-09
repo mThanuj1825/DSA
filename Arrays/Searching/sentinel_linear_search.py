@@ -6,9 +6,18 @@ from methodtime import timeit
 @timeit
 def search(arr: list[int], target: int) -> int:
     n = len(arr)
-    for i in range(n):
-        if arr[i] == target:
-            return i
+    last = arr[n - 1]
+
+    arr[n - 1] = target
+    i = 0
+
+    while arr[i] != target:
+        i += 1
+
+    arr[n - 1] = last
+
+    if i < n - 1 or arr[n - 1] == target:
+        return i
 
     return -1
 
