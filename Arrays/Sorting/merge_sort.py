@@ -31,7 +31,7 @@ def sort(arr: list[int]) -> list[int]:
             r += 1
 
     def perform_sort(left: int, right: int) -> None:
-        import insertion_sort
+        from Arrays.Sorting import insertion_sort
         if left < right:
             if right - left + 1 < 32:
                 insertion_sort.sort(arr)

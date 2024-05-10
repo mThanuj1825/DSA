@@ -2,7 +2,7 @@ import random
 
 from methodtime import timeit
 
-import binary_search
+from Searching.Algorithms import binary_search
 
 
 @timeit
