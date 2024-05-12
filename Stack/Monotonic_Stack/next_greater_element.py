@@ -1,4 +1,4 @@
-from Stack import stack
+from Stack.Implementations_of_Stack import stack
 
 
 def solve(arr: list[int]) -> list[int]:

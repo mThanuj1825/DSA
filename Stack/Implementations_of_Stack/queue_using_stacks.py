@@ -1,4 +1,4 @@
-from Stack.stack import Stack
+from Stack.Implementations_of_Stack.stack import Stack
 
 
 class Queue:
