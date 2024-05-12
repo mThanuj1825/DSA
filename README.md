@@ -1,4 +1,4 @@
-Data Structures and Algorithms (DSA) Course Repository
+Data Structures and Algorithms (DSA) Course Repository <br><br>
 Welcome to the Data Structures and Algorithms (DSA) course repository! This repository contains Python implementations of various data structures and solutions to common DSA problems. Whether you're learning DSA for the first time or revising concepts for exams and interviews, you'll find valuable resources here.
 
 Introduction
