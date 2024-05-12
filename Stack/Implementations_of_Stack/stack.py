@@ -9,12 +9,12 @@ class Stack:
         self.top = None
         self.cur_size = 0
 
-    def push(self, data: int) -> None:
+    def push(self, data: any) -> None:
         new_node = Node(data, self.top)
         self.top = new_node
         self.cur_size += 1
 
-    def pop(self) -> int | float:
+    def pop(self) -> any:
         if not self.is_empty():
             data = self.top.data
             self.top = self.top.bottom
@@ -23,7 +23,7 @@ class Stack:
 
         return float('inf')
 
-    def peek(self) -> int | float:
+    def peek(self) -> any:
         if not self.is_empty():
             return self.top.data
 
