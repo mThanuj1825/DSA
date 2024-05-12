@@ -11,6 +11,3 @@ Prerequisites
 To run the code in this repository, you need:
 -> Python installed on your system
 -> Any Python IDE such as PyCharm or Jupyter Notebook
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
