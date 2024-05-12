@@ -1,4 +1,4 @@
-from Stack.Implementations_of_Stack.stack import Stack
+from Stacks.Implementations_of_Stack.stack import Stack
 
 
 def solve(brackets: str) -> bool:

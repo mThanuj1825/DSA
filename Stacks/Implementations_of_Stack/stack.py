@@ -34,3 +34,12 @@ class Stack:
 
     def is_empty(self) -> bool:
         return self.top is None
+
+    def print(self) -> None:
+        temp = self.top
+
+        while temp:
+            print(temp.data, " -> ", end=" ")
+            temp = temp.bottom
+
+        print("None")
