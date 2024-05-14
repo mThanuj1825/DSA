@@ -5,8 +5,11 @@ class Graph:
         self.present_nodes = set()
 
     def add_edge(self, src: int, dst: int) -> None:
+        if dst not in self.present_nodes:
+            self.add_node(dst)
+
         if src not in self.present_nodes:
-            return
+            self.add_node(src)
 
         self.graph[src].add(dst)
         self.edges += 1
@@ -98,12 +101,6 @@ if __name__ == '__main__':
     # # print(g)
     # # print(g.total_edges())
 
-    g.add_node(0)
-    g.add_node(1)
-    g.add_node(2)
-    g.add_node(3)
-    g.add_node(4)
-
     g.add_edge(0, 1)
     g.add_edge(0, 3)
     g.add_edge(0, 4)
@@ -114,6 +111,6 @@ if __name__ == '__main__':
 
     # print(g)
 
-    g.transpose()
+    # g.transpose()
 
     print(g)
