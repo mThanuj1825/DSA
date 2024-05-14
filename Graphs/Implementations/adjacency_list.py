@@ -44,6 +44,21 @@ class Graph:
     def total_edges(self) -> int:
         return self.edges
 
+    def transpose(self) -> None:
+        if not self.present_nodes:
+            return
+
+        cur_graph = {}
+
+        for src, dst in self.graph.items():
+            for d in dst:
+                if d in cur_graph:
+                    cur_graph[d].add(src)
+                else:
+                    cur_graph[d] = {src}
+
+        self.graph = cur_graph
+
     def __repr__(self) -> str:
         content = ''
         for src, dst in self.graph.items():
@@ -54,31 +69,51 @@ class Graph:
 
 if __name__ == '__main__':
     g = Graph()
+    # g.add_node(1)
+    # g.add_node(2)
+    # # print(g)
+    #
+    # g.add_edge(1, 2)
+    # # print(g)
+    # g.add_node(3)
+    # g.add_node(4)
+    # g.add_node(5)
+    # # print(g)
+    #
+    # g.add_edge(2, 4)
+    # g.add_edge(3, 5)
+    # g.add_edge(4, 5)
+    # g.add_edge(5, 2)
+    # g.add_edge(1, 3)
+    # # print(g)
+    #
+    # # print(g)
+    # # print(g.present_nodes)
+    # g.remove_node(2)
+    # # print(g)
+    #
+    # # print(g.present_nodes)
+    #
+    # g.remove_edge(1, 3)
+    # # print(g)
+    # # print(g.total_edges())
+
+    g.add_node(0)
     g.add_node(1)
     g.add_node(2)
-    # print(g)
-
-    g.add_edge(1, 2)
-    # print(g)
     g.add_node(3)
     g.add_node(4)
-    g.add_node(5)
+
+    g.add_edge(0, 1)
+    g.add_edge(0, 3)
+    g.add_edge(0, 4)
+    g.add_edge(2, 0)
+    g.add_edge(3, 2)
+    g.add_edge(4, 1)
+    g.add_edge(4, 3)
+
     # print(g)
 
-    g.add_edge(2, 4)
-    g.add_edge(3, 5)
-    g.add_edge(4, 5)
-    g.add_edge(5, 2)
-    g.add_edge(1, 3)
-    # print(g)
+    g.transpose()
 
-    # print(g)
-    # print(g.present_nodes)
-    g.remove_node(2)
-    # print(g)
-
-    # print(g.present_nodes)
-
-    g.remove_edge(1, 3)
-    # print(g)
-    # print(g.total_edges())
+    print(g)
