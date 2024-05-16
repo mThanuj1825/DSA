@@ -3,8 +3,9 @@ class Graph:
         self.graph = {}
         self.edges = 0
         self.present_nodes = set()
+        self.weights = {}
 
-    def add_edge(self, src: int, dst: int) -> None:
+    def add_edge(self, src: int, dst: int, weight=0) -> None:
         if dst not in self.present_nodes:
             self.add_node(dst)
 
@@ -12,6 +13,7 @@ class Graph:
             self.add_node(src)
 
         self.graph[src].add(dst)
+        self.weights[(src, dst)] = weight
         self.edges += 1
 
     def remove_edge(self, src: int, dst: int) -> None:
@@ -107,10 +109,6 @@ if __name__ == '__main__':
     g.add_edge(2, 0)
     g.add_edge(3, 2)
     g.add_edge(4, 1)
-    g.add_edge(4, 3)
-
-    # print(g)
-
-    # g.transpose()
+    g.add_edge(4, 3, 8)
 
     print(g)
