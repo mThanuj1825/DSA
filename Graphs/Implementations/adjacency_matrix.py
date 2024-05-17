@@ -36,6 +36,22 @@ class Graph:
 
         self.present_nodes.remove(node)
 
+    def floyd_warshall_matrix(self) -> list[list[int]]:
+        cur_graph = []
+        for i in range(self.nodes):
+            row = []
+            for j in range(self.nodes):
+                if self.graph[i][j] == 0:
+                    if i == j:
+                        row.append(0)
+                    else:
+                        row.append(float('inf'))
+                else:
+                    row.append(self.graph[i][j])
+            cur_graph.append(row)
+
+        return cur_graph
+
     def has_node(self, node: int) -> bool:
         return node in self.present_nodes
 
