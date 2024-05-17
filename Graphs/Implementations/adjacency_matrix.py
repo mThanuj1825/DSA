@@ -5,7 +5,7 @@ class Graph:
         self.edges = 0
         self.present_nodes = set()
 
-    def add_edge(self, src: int, dst: int, weight=1) -> None:
+    def add_edge(self, src: int, dst: int, weight=1, undirected=True) -> None:
         if src < 0 or src >= self.nodes or dst < 0 or dst >= self.nodes or self.graph[src][dst] != 0:
             return
 
@@ -13,6 +13,10 @@ class Graph:
         self.present_nodes.add(dst)
         self.graph[src][dst] = weight
         self.edges += 1
+
+        if undirected:
+            self.graph[dst][src] = weight
+            self.edges += 1
 
     def remove_edge(self, src: int, dst: int) -> None:
         if src < 0 or src >= self.nodes or dst < 0 or dst >= self.nodes or self.graph[src][dst] == 0:
